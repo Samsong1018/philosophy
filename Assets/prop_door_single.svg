@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 290" width="170" height="290">
+<rect x="0" y="0" width="170" height="290" rx="6" fill="#9ab5a4" stroke="#4b5560" stroke-width="6"/>
+<rect x="30" y="30" width="110" height="40" rx="4" fill="#f3f1ea" stroke="#4b5560" stroke-width="3"/>
+<text x="85" y="58" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#2b2d33">SINGLE</text>
+<circle cx="145" cy="155" r="7" fill="#d0d4d9"/>
+</svg>

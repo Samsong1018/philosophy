@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+<rect width="960" height="540" fill="#d9dde0"/>
+<rect y="0" width="960" height="120" fill="#c6cbd0"/>
+<rect y="410" width="960" height="130" fill="#a9a59a"/>
+<rect y="410" width="960" height="8" fill="#8b877c"/>
+<rect x="250" y="120" width="170" height="290" rx="6" fill="#8aa0b5" stroke="#4b5560" stroke-width="6"/>
+<rect x="285" y="150" width="100" height="40" rx="4" fill="#f3f1ea" stroke="#4b5560" stroke-width="3"/>
+<text x="335" y="179" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#2b2d33">GIRLS</text>
+<circle cx="395" cy="275" r="7" fill="#d0d4d9"/>
+<rect x="540" y="120" width="170" height="290" rx="6" fill="#8aa0b5" stroke="#4b5560" stroke-width="6"/>
+<rect x="575" y="150" width="100" height="40" rx="4" fill="#f3f1ea" stroke="#4b5560" stroke-width="3"/>
+<text x="625" y="179" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#2b2d33">BOYS</text>
+<circle cx="685" cy="275" r="7" fill="#d0d4d9"/>
+</svg>

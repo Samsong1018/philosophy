@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" width="240" height="140">
+<rect x="2" y="2" width="236" height="136" rx="4" fill="#f3e08a" stroke="#b79b30" stroke-width="3"/>
+<text x="120" y="34" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#3a3320">DETENTION</text>
+<g stroke="#b79b30" stroke-width="2"><path d="M20 62 L220 62"/><path d="M20 86 L220 86"/><path d="M20 110 L170 110"/></g>
+</svg>

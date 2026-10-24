@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" width="160" height="48">
+<rect x="2" y="2" width="156" height="44" rx="22" fill="#2b2d33"/>
+<text x="80" y="24" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#f3f1ea">word</text>
+<text x="80" y="38" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#9aa0a6">source</text>
+</svg>
