@@ -1,3 +1,14 @@
 [gd_scene format=3 uid="uid://c1x2ac76wpt6p"]
 
+[ext_resource type="Texture2D" uid="uid://c6ouahodhvdk4" path="res://Assets/bg_god.svg" id="1_mkw4f"]
+[ext_resource type="Script" uid="uid://criklj04uptfo" path="res://Scripts/god_one.gd" id="1_qvlco"]
+[ext_resource type="PackedScene" path="res://Scenes/text_box.tscn" id="2_qvlco"]
+
 [node name="god_one" type="Node2D" unique_id=1075437892]
+script = ExtResource("1_qvlco")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=2118962072]
+position = Vector2(577, 324)
+texture = ExtResource("1_mkw4f")
+
+[node name="TextBox" parent="." unique_id=1175913751 instance=ExtResource("2_qvlco")]

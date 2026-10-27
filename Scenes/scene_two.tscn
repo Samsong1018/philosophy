@@ -37,4 +37,4 @@ rotation = 0.9194531
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_i1xeg")
 
-[node name="TextBox" parent="." instance=ExtResource("6_textbox")]
+[node name="TextBox" parent="." unique_id=1337784965 instance=ExtResource("6_textbox")]

@@ -22,10 +22,7 @@ scene_manager="*res://Scripts/scene_manager.gd"
 
 [display]
 
-window/size/viewport_width=1152
-window/size/viewport_height=648
 window/stretch/mode="canvas_items"
-window/stretch/aspect="keep"
 
 [gui]
 
@@ -37,5 +34,5 @@ theme/custom="res://Resources/vn_theme.tres"
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

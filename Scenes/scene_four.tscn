@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bugqo60usr8sv"]
+
+[ext_resource type="Texture2D" uid="uid://ba7t7k3x12oej" path="res://Assets/bg_classroom.svg" id="1_0flgx"]
+[ext_resource type="Script" uid="uid://ckcrlxsy1p0ao" path="res://Scripts/scene_four.gd" id="1_7u0en"]
+[ext_resource type="PackedScene" path="res://Scenes/text_box.tscn" id="2_kalhj"]
+[ext_resource type="Texture2D" uid="uid://mmcqr1nrl2sj" path="res://Assets/char_player_base.svg" id="3_kalhj"]
+[ext_resource type="Texture2D" uid="uid://b1ddwjnu1a764" path="res://Assets/char_alvarez_blank.svg" id="5_scx37"]
+
+[node name="scene_four" type="Node2D" unique_id=1027449073]
+script = ExtResource("1_7u0en")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1897305154]
+position = Vector2(577, 324)
+texture = ExtResource("1_0flgx")
+
+[node name="TextBox" parent="." unique_id=1295997867 instance=ExtResource("2_kalhj")]
+
+[node name="Player" type="Node2D" parent="." unique_id=1434964462]
+position = Vector2(188.00002, 437.00003)
+scale = Vector2(0.65, 0.65)
+
+[node name="Body" type="Sprite2D" parent="Player" unique_id=1452563417]
+texture = ExtResource("3_kalhj")
+
+[node name="Clothes" type="Sprite2D" parent="Player" unique_id=1632519072]
+
+[node name="teacher" type="Sprite2D" parent="." unique_id=1766924377]
+position = Vector2(883.00006, 443.00003)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("5_scx37")
