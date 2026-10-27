@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+<rect width="960" height="540" fill="#d9dde0"/>
+<rect y="0" width="960" height="120" fill="#c6cbd0"/>
+<rect y="410" width="960" height="130" fill="#a9a59a"/>
+<rect y="410" width="960" height="8" fill="#8b877c"/>
+<polygon points="254,410 416,410 490,500 180,500" fill="#f6efcf" opacity="0.35"/>
+<rect x="540" y="120" width="170" height="290" rx="6" fill="#8aa0b5" stroke="#4b5560" stroke-width="6"/>
+<rect x="575" y="150" width="100" height="40" rx="4" fill="#f3f1ea" stroke="#4b5560" stroke-width="3"/>
+<text x="625" y="179" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#2b2d33">BOYS</text>
+<circle cx="685" cy="275" r="7" fill="#d0d4d9"/>
+<rect x="250" y="120" width="170" height="290" fill="#dfe5e8"/>
+<g stroke="#c3ccd1" stroke-width="1.5"><path d="M278 134 L278 378" /><path d="M306 134 L306 378" /><path d="M334 134 L334 378" /><path d="M362 134 L362 378" /><path d="M390 134 L390 378" /><path d="M418 134 L418 378" /><path d="M250 162 L420 162" /><path d="M250 190 L420 190" /><path d="M250 218 L420 218" /><path d="M250 246 L420 246" /><path d="M250 274 L420 274" /><path d="M250 302 L420 302" /><path d="M250 330 L420 330" /><path d="M250 358 L420 358" /></g>
+<rect x="250" y="120" width="170" height="14" fill="#c6cdd2"/>
+<rect x="280" y="124" width="110" height="6" rx="3" fill="#fbf8ea"/>
+<rect x="285" y="150" width="100" height="90" rx="4" fill="#bcd3e3" stroke="#8a9aa6" stroke-width="6"/>
+<path d="M305 236 L345 154" stroke="#e4f0f8" stroke-width="8" opacity="0.7"/>
+<path d="M335 236 L360 184" stroke="#e4f0f8" stroke-width="5" opacity="0.7"/>
+<rect x="332" y="262" width="6" height="26" fill="#9aa4aa"/>
+<rect x="326" y="258" width="22" height="6" rx="3" fill="#9aa4aa"/>
+<ellipse cx="335" cy="294" rx="40" ry="9" fill="#eef2f4" stroke="#aeb6bc" stroke-width="2"/>
+<rect x="270" y="300" width="130" height="16" rx="3" fill="#aeb6bc"/>
+<rect x="280" y="316" width="110" height="62" fill="#c4cbd0"/>
+<rect x="332" y="316" width="6" height="62" fill="#aeb6bc"/>
+<rect x="250" y="378" width="170" height="32" fill="#b7b5aa"/>
+<path d="M250 394 L420 394" stroke="#a3a196" stroke-width="2"/><rect x="250" y="120" width="14" height="290" fill="#000" opacity="0.14"/><rect x="250" y="120" width="170" height="290" fill="none" stroke="#4b5560" stroke-width="6"/>
+<polygon points="250,120 204,98 204,434 250,410" fill="#7d93a8" stroke="#4b5560" stroke-width="6" stroke-linejoin="round"/>
+<circle cx="214" cy="270" r="5" fill="#d0d4d9"/>
+<rect x="285" y="66" width="100" height="34" rx="4" fill="#f3f1ea" stroke="#4b5560" stroke-width="3"/>
+<text x="335" y="90" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#2b2d33">GIRLS</text>
+</svg>

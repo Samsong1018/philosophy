@@ -1,1 +1,4 @@
-res://Scenes/scene_one.tscn
+res://Scenes/scene_two.tscn
+res://Scenes/scene_two.gd
+res://Scenes/scene_three.tscn
+res://Scripts/scene_three.gd
