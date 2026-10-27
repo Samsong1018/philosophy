@@ -5,18 +5,18 @@
 [ext_resource type="Texture2D" uid="uid://mmcqr1nrl2sj" path="res://Assets/char_player_base.svg" id="2_77a3f"]
 [ext_resource type="Texture2D" uid="uid://bsl1arl7i547b" path="res://Assets/char_dev.svg" id="4_3iljs"]
 [ext_resource type="Texture2D" uid="uid://sauqp0edcsq7" path="res://Assets/prop_phone.svg" id="5_i1xeg"]
+[ext_resource type="PackedScene" path="res://Scenes/text_box.tscn" id="6_textbox"]
 
 [node name="scene_two" type="Node2D" unique_id=876945121]
 script = ExtResource("1_7lx62")
 
 [node name="background" type="Sprite2D" parent="." unique_id=952574972]
-position = Vector2(577.5, 325)
-scale = Vector2(1.196875, 1.1888889)
+position = Vector2(576, 324)
 texture = ExtResource("1_21odi")
 
 [node name="player" type="Node2D" parent="." unique_id=1993525040]
-position = Vector2(181, 449.99997)
-scale = Vector2(1.23, 1.23)
+position = Vector2(181, 450)
+scale = Vector2(0.615, 0.615)
 
 [node name="body" type="Sprite2D" parent="player" unique_id=612989358]
 texture = ExtResource("2_77a3f")
@@ -26,111 +26,15 @@ texture = ExtResource("2_77a3f")
 [node name="dev" type="Node2D" parent="." unique_id=73116987]
 visible = false
 position = Vector2(908, 456)
-scale = Vector2(1.23, 1.23)
+scale = Vector2(0.615, 0.615)
 
 [node name="Sprite2D" type="Sprite2D" parent="dev" unique_id=1108160710]
 texture = ExtResource("4_3iljs")
 
-[node name="TextBox" type="ColorRect" parent="." unique_id=410154455]
-offset_left = 3.0
-offset_top = 538.0
-offset_right = 1150.0
-offset_bottom = 648.0
-color = Color(0, 0, 0, 0.75686276)
-
-[node name="Speaker" type="Label" parent="TextBox" unique_id=1792888272]
-layout_mode = 0
-offset_left = 23.0
-offset_right = 1115.0
-offset_bottom = 29.0
-text = "Narrator"
-vertical_alignment = 1
-
-[node name="Text" type="Label" parent="TextBox" unique_id=847709642]
-layout_mode = 0
-offset_left = 22.0
-offset_top = 32.0
-offset_right = 1120.0
-offset_bottom = 109.0
-text = "You arrived at school..."
-vertical_alignment = 1
-
-[node name="responses" type="Node2D" parent="TextBox" unique_id=1734878662]
-position = Vector2(397, 57)
-
-[node name="confirm" type="Button" parent="TextBox/responses" unique_id=1401584064]
-visible = false
-offset_right = 8.0
-offset_bottom = 8.0
-text = "> Yeah."
-
-[node name="deny" type="Button" parent="TextBox/responses" unique_id=2084032138]
-visible = false
-offset_left = 152.0
-offset_top = -1.0
-offset_right = 328.0
-offset_bottom = 30.0
-text = "> Why does it matter?"
-
-[node name="deflect" type="Button" parent="TextBox/responses" unique_id=194528270]
-visible = false
-offset_left = 410.0
-offset_top = -1.0
-offset_right = 607.0
-offset_bottom = 30.0
-text = "> Depends who's asking."
-
-[node name="Yes" type="Button" parent="TextBox/responses" unique_id=113082448]
-visible = false
-offset_left = 129.0
-offset_top = 1.0
-offset_right = 248.0
-offset_bottom = 32.0
-text = "Yes"
-
-[node name="No" type="Button" parent="TextBox/responses" unique_id=138242255]
-visible = false
-offset_left = 288.0
-offset_top = 2.0
-offset_right = 408.0
-offset_bottom = 33.0
-text = "No"
-
-[node name="Accept" type="Button" parent="TextBox/responses" unique_id=1566584516]
-visible = false
-offset_left = 70.0
-offset_top = -9.0
-offset_right = 188.0
-offset_bottom = 27.0
-text = "Accept"
-
-[node name="Rework" type="Button" parent="TextBox/responses" unique_id=585296782]
-visible = false
-offset_left = 225.0
-offset_top = -8.0
-offset_right = 351.0
-offset_bottom = 29.0
-text = "Rework"
-
-[node name="Refuse" type="Button" parent="TextBox/responses" unique_id=1241676352]
-visible = false
-offset_left = 381.0
-offset_top = -5.0
-offset_right = 501.0
-offset_bottom = 29.0
-text = "Refuse"
-
 [node name="Phone" type="Sprite2D" parent="." unique_id=972441823]
-position = Vector2(1098, 504.00006)
+position = Vector2(1066, 472)
 rotation = 0.9194531
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_i1xeg")
 
-[connection signal="pressed" from="TextBox/responses/confirm" to="." method="_on_confirm_pressed"]
-[connection signal="pressed" from="TextBox/responses/deny" to="." method="_on_deny_pressed"]
-[connection signal="pressed" from="TextBox/responses/deflect" to="." method="_on_deflect_pressed"]
-[connection signal="pressed" from="TextBox/responses/Yes" to="." method="_on_yes_pressed"]
-[connection signal="pressed" from="TextBox/responses/No" to="." method="_on_no_pressed"]
-[connection signal="pressed" from="TextBox/responses/Accept" to="." method="_on_accept_pressed"]
-[connection signal="pressed" from="TextBox/responses/Rework" to="." method="_on_rework_pressed"]
-[connection signal="pressed" from="TextBox/responses/Refuse" to="." method="_on_refuse_pressed"]
+[node name="TextBox" parent="." instance=ExtResource("6_textbox")]

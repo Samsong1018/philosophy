@@ -2,14 +2,26 @@
 
 [ext_resource type="Script" uid="uid://b1gtryouxurqf" path="res://Scripts/main_screen.gd" id="1_p8vjv"]
 
-[node name="MainScreen" type="Node2D" unique_id=1058477622]
+[node name="MainScreen" type="Control" unique_id=1058477622]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_p8vjv")
 
-[node name="start" type="Button" parent="." unique_id=750713841]
-offset_left = 499.0
-offset_top = 337.0
-offset_right = 597.0
-offset_bottom = 382.0
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="start" type="Button" parent="Center" unique_id=750713841]
+custom_minimum_size = Vector2(180, 56)
+layout_mode = 2
 text = "Start"
 
-[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Center/start" to="." method="_on_start_pressed"]

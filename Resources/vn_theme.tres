@@ -1,0 +1,141 @@
+[gd_resource type="Theme" format=3]
+
+[sub_resource type="StyleBoxFlat" id="box_panel"]
+content_margin_left = 30.0
+content_margin_top = 16.0
+content_margin_right = 30.0
+content_margin_bottom = 14.0
+bg_color = Color(0.055, 0.055, 0.08, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.91, 0.87, 0.7, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_size = 12
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="name_plate"]
+content_margin_left = 20.0
+content_margin_top = 5.0
+content_margin_right = 20.0
+content_margin_bottom = 5.0
+bg_color = Color(0.93, 0.89, 0.7, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.72, 0.61, 0.19, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.4)
+shadow_size = 6
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="button_normal"]
+content_margin_left = 22.0
+content_margin_top = 7.0
+content_margin_right = 22.0
+content_margin_bottom = 7.0
+bg_color = Color(0.1, 0.1, 0.14, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.91, 0.87, 0.7, 0.7)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="button_hover"]
+content_margin_left = 22.0
+content_margin_top = 7.0
+content_margin_right = 22.0
+content_margin_bottom = 7.0
+bg_color = Color(0.93, 0.89, 0.7, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.72, 0.61, 0.19, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="button_pressed"]
+content_margin_left = 22.0
+content_margin_top = 9.0
+content_margin_right = 22.0
+content_margin_bottom = 5.0
+bg_color = Color(0.8, 0.76, 0.58, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.72, 0.61, 0.19, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="button_focus"]
+
+[sub_resource type="StyleBoxFlat" id="door_normal"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="door_hover"]
+bg_color = Color(1, 1, 1, 0.14)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.91, 0.87, 0.7, 0.9)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[resource]
+default_font_size = 20
+Button/colors/font_color = Color(0.93, 0.9, 0.78, 1)
+Button/colors/font_focus_color = Color(0.93, 0.9, 0.78, 1)
+Button/colors/font_hover_color = Color(0.1, 0.09, 0.06, 1)
+Button/colors/font_hover_pressed_color = Color(0.1, 0.09, 0.06, 1)
+Button/colors/font_pressed_color = Color(0.1, 0.09, 0.06, 1)
+Button/styles/focus = SubResource("button_focus")
+Button/styles/hover = SubResource("button_hover")
+Button/styles/hover_pressed = SubResource("button_pressed")
+Button/styles/normal = SubResource("button_normal")
+Button/styles/pressed = SubResource("button_pressed")
+Label/colors/font_color = Color(0.93, 0.9, 0.78, 1)
+RichTextLabel/colors/default_color = Color(0.95, 0.94, 0.9, 1)
+RichTextLabel/constants/line_separation = 6
+DoorButton/base_type = &"Button"
+DoorButton/colors/font_color = Color(1, 1, 1, 0)
+DoorButton/colors/font_hover_color = Color(0.95, 0.94, 0.9, 1)
+DoorButton/styles/hover = SubResource("door_hover")
+DoorButton/styles/normal = SubResource("door_normal")
+DoorButton/styles/pressed = SubResource("door_hover")
+NamePlate/base_type = &"PanelContainer"
+NamePlate/styles/panel = SubResource("name_plate")
+NamePlateLabel/base_type = &"Label"
+NamePlateLabel/colors/font_color = Color(0.16, 0.13, 0.05, 1)
+TextBoxPanel/base_type = &"PanelContainer"
+TextBoxPanel/styles/panel = SubResource("box_panel")

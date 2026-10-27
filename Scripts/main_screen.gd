@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/scene_one.tscn")
+	scene_manager.change_scene("res://Scenes/scene_one.tscn")

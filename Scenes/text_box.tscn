@@ -1,0 +1,106 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/text_box.gd" id="1_textbox"]
+
+[sub_resource type="Gradient" id="Gradient_fade"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.7)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fade"]
+gradient = SubResource("Gradient_fade")
+width = 4
+height = 256
+fill_from = Vector2(0, 0)
+fill_to = Vector2(0, 1)
+
+[node name="TextBox" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_textbox")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Vignette" type="TextureRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -300.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_fade")
+expand_mode = 1
+
+[node name="Box" type="PanelContainer" parent="Root"]
+custom_minimum_size = Vector2(0, 144)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = -160.0
+offset_right = -28.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme_type_variation = &"TextBoxPanel"
+
+[node name="VBox" type="VBoxContainer" parent="Root/Box"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Text" type="RichTextLabel" parent="Root/Box/VBox"]
+layout_mode = 2
+mouse_filter = 2
+size_flags_vertical = 3
+
+[node name="Choices" type="HBoxContainer" parent="Root/Box/VBox"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="NamePlate" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 52.0
+offset_top = -186.0
+offset_right = 52.0
+offset_bottom = -146.0
+grow_vertical = 0
+mouse_filter = 2
+theme_type_variation = &"NamePlate"
+
+[node name="Speaker" type="Label" parent="Root/NamePlate"]
+layout_mode = 2
+theme_type_variation = &"NamePlateLabel"
+text = "Speaker"
+
+[node name="ContinueMark" type="Label" parent="Root"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -50.0
+offset_right = -48.0
+offset_bottom = -26.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "▼"

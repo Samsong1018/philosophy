@@ -18,11 +18,18 @@ config/icon="res://icon.svg"
 [autoload]
 
 player="*uid://dwpc5r2kb70w1"
+scene_manager="*res://Scripts/scene_manager.gd"
 
 [display]
 
+window/size/viewport_width=1152
+window/size/viewport_height=648
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/aspect="keep"
+
+[gui]
+
+theme/custom="res://Resources/vn_theme.tres"
 
 [physics]
 
@@ -30,4 +37,5 @@ window/stretch/aspect="expand"
 
 [rendering]
 
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 rendering_device/driver.windows="d3d12"
