@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://0vdhjpmn2jpj" path="res://Assets/bg_bathroom_hall.svg" id="1_31ute"]
 [ext_resource type="Script" uid="uid://b87nwty5njk0h" path="res://Scripts/scene_three.gd" id="1_th6ih"]
+[ext_resource type="Texture2D" uid="uid://c2pp68243viyu" path="res://Assets/char_student_sink.svg" id="3_4u6rw"]
+[ext_resource type="Texture2D" uid="uid://5xlmq3xhtxjy" path="res://Assets/char_student_sink_boy.svg" id="4_214nb"]
 
 [node name="scene_three" type="Node2D" unique_id=1924177092]
 script = ExtResource("1_th6ih")
@@ -51,6 +53,18 @@ offset_top = 140.0
 offset_right = 855.0
 offset_bottom = 500.0
 text = "Boys"
+
+[node name="studentGirl" type="Sprite2D" parent="." unique_id=1339602289]
+visible = false
+position = Vector2(360, 348)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_4u6rw")
+
+[node name="studentBoy" type="Sprite2D" parent="." unique_id=1380648074]
+visible = false
+position = Vector2(796, 350)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_214nb")
 
 [connection signal="pressed" from="Options/Girls" to="." method="_on_girls_pressed"]
 [connection signal="pressed" from="Options/Boys" to="." method="_on_boys_pressed"]
