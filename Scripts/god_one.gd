@@ -16,5 +16,7 @@ func _ready() -> void:
 		await $TextBox.say("??", "You will be asked again. Not by me.")
 	else:
 		await $TextBox.say("??", "Silence is also an answer. I heard it.")
-		
+
+	# the world made these unintelligible until now
+	player.unlock()
 	scene_manager.change_scene("res://Scenes/scene_four.tscn")

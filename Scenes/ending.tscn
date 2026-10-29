@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b5it572v04xdv" path="res://Scripts/ending.gd" id="1_ending"]
 [ext_resource type="Texture2D" uid="uid://b0dso3peevpah" path="res://Assets/bg_hallway.svg" id="2_hall"]
-[ext_resource type="Texture2D" uid="uid://mmcqr1nrl2sj" path="res://Assets/char_player_base.svg" id="3_player"]
 [ext_resource type="Texture2D" uid="uid://x5g7a2mhp5f" path="res://Assets/char_rowan.svg" id="4_rowan"]
 [ext_resource type="PackedScene" path="res://Scenes/text_box.tscn" id="5_textbox"]
+[ext_resource type="PackedScene" uid="uid://l2dyfs6eij3a" path="res://Scenes/player.tscn" id="9_player"]
 
 [node name="ending" type="Node2D" unique_id=1589811159]
 script = ExtResource("1_ending")
@@ -13,15 +13,10 @@ script = ExtResource("1_ending")
 position = Vector2(576, 324)
 texture = ExtResource("2_hall")
 
-[node name="player" type="Node2D" parent="." unique_id=1899718108]
+[node name="player" parent="." instance=ExtResource("9_player")]
 visible = false
 position = Vector2(181, 450)
 scale = Vector2(0.615, 0.615)
-
-[node name="body" type="Sprite2D" parent="player" unique_id=260037888]
-texture = ExtResource("3_player")
-
-[node name="clothes" type="Sprite2D" parent="player" unique_id=778526938]
 
 [node name="rowan" type="Node2D" parent="." unique_id=1812982540]
 visible = false
@@ -31,13 +26,9 @@ scale = Vector2(0.615, 0.615)
 [node name="Sprite2D" type="Sprite2D" parent="rowan" unique_id=820879782]
 texture = ExtResource("4_rowan")
 
-[node name="RowanTags" type="Label" parent="." unique_id=1219194184]
-offset_left = 780.0
-offset_top = 190.0
-offset_right = 1040.0
-offset_bottom = 230.0
-theme_override_colors/font_color = Color(0.1, 0.1, 0.12, 1)
-horizontal_alignment = 1
+[node name="tags" type="Node2D" parent="rowan"]
+position = Vector2(0, -420)
+scale = Vector2(1.626, 1.626)
 
 [node name="Columns" type="ColorRect" parent="." unique_id=1469209819]
 visible = false

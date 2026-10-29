@@ -1,18 +1,14 @@
 extends Node2D
 
 func _ready() -> void:
-	if player.state["clothes"] == 1:
-		$player/clothes.texture = load("res://Assets/char_player_outfit_jeans_tshirt.svg")
-	elif player.state["clothes"] == 0:
-		$player/clothes.texture = load("res://Assets/char_player_outfit_skirt_tshirt.svg")
-
 	# what the day kept: three versions of the same life, side by side
 	$Columns/Did.text = "WHAT YOU DID\n\n" + "\n".join(player.state["actions"])
 	$Columns/Said.text = "WHAT YOU SAID\n\n" + "\n".join(player.state["accounts"])
 	$Columns/Wrote.text = "WHAT THEY WROTE\n\n" + "\n".join(player.state["record"])
 	var tags = []
 	for tag in player.state["tags"]:
-		tags.append(tag + " (" + player.state["tag_sources"].get(tag, "unknown") + ")")
+		if player.state["tag_relations"].get(tag, "") != "refuse":
+			tags.append(player.tag_as_heard(tag) + " (" + player.state["tag_sources"].get(tag, "unknown") + ")")
 	$Columns/Tags.text = "Tags: " + ", ".join(tags)
 	$Columns.visible = true
 	await $TextBox.say("??", "Here is what the day kept.")
@@ -42,7 +38,10 @@ func _ready() -> void:
 	var first = await $TextBox.ask("You", "...", ["What are you? Grade, schedule, anything?", "Who are you?", "I'll show you around."])
 	if first == 0:
 		await $TextBox.say("Rowan", "Sophomore. Schedule's in my bag.")
-		$RowanTags.text = "sophomore"
+		var plate = player.make_plate("sophomore", "your question")
+		$rowan/tags.add_child(plate)
+		await get_tree().process_frame
+		plate.position = Vector2(-130 - plate.size.x, 0)
 		await $TextBox.say("Narrator", "You gave them the first question you were given.")
 	elif first == 1:
 		await $TextBox.say("Rowan", "I'm not sure how to say yet. Ask me tomorrow?")

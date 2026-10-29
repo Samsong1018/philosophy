@@ -2,18 +2,18 @@ extends Node2D
 
 func _ready() -> void:
 	await $TextBox.say("You", "You are awake. You don't remember deciding to go to school today. You never remember deciding.")
-	var pick = await $TextBox.ask("You", "The closet is already full. Someone stocked it before you had an opinion", ["Jeans/Tshirt", "Skirt/Shirt"])
+	var pick = await $TextBox.ask("You", "The closet is already full. Someone stocked it before you had an opinion.", ["Jeans/Tshirt", "Skirt/Shirt"])
 
 	if pick == 0:
 		player.state["reads"]["gender"] += 1
 		player.state["clothes"] = 1
 		player.state["actions"].append("Chose the jeans.")
-		$Player/Clothes.texture = load("res://Assets/char_player_outfit_jeans_tshirt.svg")
 	else:
 		player.state["reads"]["gender"] -= 1
 		player.state["clothes"] = 0
 		player.state["actions"].append("Chose the skirt.")
-		$Player/Clothes.texture = load("res://Assets/char_player_outfit_skirt_tshirt.svg")
+
+	$player.dress()
 
 	# reflex_state 1 = hand goes to the jeans first, 0 = the skirt
 	if pick == 1 - player.state["reflex_state"]:

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bv52axsuv2n77" path="res://Scripts/scene_two.gd" id="1_7lx62"]
 [ext_resource type="Texture2D" uid="uid://b0dso3peevpah" path="res://Assets/bg_hallway.svg" id="1_21odi"]
-[ext_resource type="Texture2D" uid="uid://mmcqr1nrl2sj" path="res://Assets/char_player_base.svg" id="2_77a3f"]
 [ext_resource type="Texture2D" uid="uid://bsl1arl7i547b" path="res://Assets/char_dev.svg" id="4_3iljs"]
 [ext_resource type="Texture2D" uid="uid://sauqp0edcsq7" path="res://Assets/prop_phone.svg" id="5_i1xeg"]
 [ext_resource type="PackedScene" path="res://Scenes/text_box.tscn" id="6_textbox"]
+[ext_resource type="PackedScene" uid="uid://l2dyfs6eij3a" path="res://Scenes/player.tscn" id="9_player"]
 
 [node name="scene_two" type="Node2D" unique_id=876945121]
 script = ExtResource("1_7lx62")
@@ -14,14 +14,9 @@ script = ExtResource("1_7lx62")
 position = Vector2(576, 324)
 texture = ExtResource("1_21odi")
 
-[node name="player" type="Node2D" parent="." unique_id=1993525040]
+[node name="player" parent="." instance=ExtResource("9_player")]
 position = Vector2(181, 450)
 scale = Vector2(0.615, 0.615)
-
-[node name="body" type="Sprite2D" parent="player" unique_id=612989358]
-texture = ExtResource("2_77a3f")
-
-[node name="clothes" type="Sprite2D" parent="player" unique_id=1827190839]
 
 [node name="dev" type="Node2D" parent="." unique_id=73116987]
 visible = false

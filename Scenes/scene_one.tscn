@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://kwbnh66stwpt" path="res://Assets/bg_closet.svg" id="1_n8bq1"]
 [ext_resource type="Script" uid="uid://cegrbm4vpn8c4" path="res://Scripts/scene_one.gd" id="1_q4gya"]
-[ext_resource type="Texture2D" uid="uid://mmcqr1nrl2sj" path="res://Assets/char_player_base.svg" id="2_q4gya"]
 [ext_resource type="PackedScene" path="res://Scenes/text_box.tscn" id="3_textbox"]
+[ext_resource type="PackedScene" uid="uid://l2dyfs6eij3a" path="res://Scenes/player.tscn" id="9_player"]
 
 [node name="scene_one" type="Node2D" unique_id=871802485]
 script = ExtResource("1_q4gya")
@@ -12,13 +12,8 @@ script = ExtResource("1_q4gya")
 position = Vector2(576, 324)
 texture = ExtResource("1_n8bq1")
 
-[node name="Player" type="Node2D" parent="." unique_id=311124612]
+[node name="player" parent="." instance=ExtResource("9_player")]
 position = Vector2(195, 420)
 scale = Vector2(0.66, 0.66)
-
-[node name="Body" type="Sprite2D" parent="Player" unique_id=1071066252]
-texture = ExtResource("2_q4gya")
-
-[node name="Clothes" type="Sprite2D" parent="Player" unique_id=617882613]
 
 [node name="TextBox" parent="." instance=ExtResource("3_textbox")]
