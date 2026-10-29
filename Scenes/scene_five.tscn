@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dntlwn25s7kc8"]
+
+[ext_resource type="Script" uid="uid://kic55fser751" path="res://Scripts/scene_five.gd" id="1_mndje"]
+[ext_resource type="Texture2D" uid="uid://br7dn2hmj4cau" path="res://Assets/bg_cafeteria.svg" id="1_wce7l"]
+[ext_resource type="PackedScene" path="res://Scenes/text_box.tscn" id="2_mndje"]
+[ext_resource type="Texture2D" uid="uid://mmcqr1nrl2sj" path="res://Assets/char_player_base.svg" id="4_a812v"]
+[ext_resource type="Texture2D" uid="uid://fp26ebdm1u23" path="res://Assets/char_kai.svg" id="5_dbiht"]
+
+[node name="scene_five" type="Node2D" unique_id=1154678168]
+script = ExtResource("1_mndje")
+
+[node name="background" type="Sprite2D" parent="." unique_id=2013358645]
+position = Vector2(578, 323)
+texture = ExtResource("1_wce7l")
+
+[node name="TextBox" parent="." unique_id=784999486 instance=ExtResource("2_mndje")]
+
+[node name="player" type="Node2D" parent="." unique_id=1237018826]
+position = Vector2(222.99998, 398)
+scale = Vector2(0.7, 0.7)
+
+[node name="body" type="Sprite2D" parent="player" unique_id=1858780837]
+texture = ExtResource("4_a812v")
+
+[node name="clothes" type="Sprite2D" parent="player" unique_id=1167121934]
+
+[node name="kai" type="Sprite2D" parent="." unique_id=1147204730]
+visible = false
+position = Vector2(886.00006, 420)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_dbiht")

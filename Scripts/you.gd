@@ -13,6 +13,7 @@ var state = {
 	"tags": [],
 	"accounts": [],
 	"actions": [],
+	"record": [],
 	"reflex_state": 0
 }
 
