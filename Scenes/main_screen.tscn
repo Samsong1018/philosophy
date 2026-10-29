@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bdmpsslgpyt0h"]
 
 [ext_resource type="Script" uid="uid://b1gtryouxurqf" path="res://Scripts/main_screen.gd" id="1_p8vjv"]
+[ext_resource type="Texture2D" path="res://Assets/char_player_base.svg" id="2_player"]
 
 [node name="MainScreen" type="Control" unique_id=1058477622]
 layout_mode = 3
@@ -11,6 +12,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p8vjv")
 
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.06, 0.06, 0.08, 1)
+
+[node name="Silhouette" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.35)
+position = Vector2(900, 380)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_player")
+
 [node name="Center" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -19,9 +36,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="start" type="Button" parent="Center" unique_id=750713841]
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "Asked"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "an ordinary school day"
+horizontal_alignment = 1
+
+[node name="Gap" type="Control" parent="Center/VBox"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+
+[node name="start" type="Button" parent="Center/VBox" unique_id=750713841]
 custom_minimum_size = Vector2(180, 56)
 layout_mode = 2
+size_flags_horizontal = 4
 text = "Start"
 
-[connection signal="pressed" from="Center/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Center/VBox/start" to="." method="_on_start_pressed"]

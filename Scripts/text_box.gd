@@ -58,7 +58,7 @@ func _build_text_input() -> void:
 	var row = HBoxContainer.new()
 	input_field = LineEdit.new()
 	input_field.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	input_field.placeholder_text = "Type your answer..."
+	input_field.placeholder_text = "Type your answer (or leave it blank)..."
 	input_field.max_length = MAX_INPUT_LENGTH
 	var submit = Button.new()
 	submit.text = "Submit"
@@ -73,9 +73,8 @@ func _build_text_input() -> void:
 func _submit_text() -> void:
 	if not locked or input_field == null:
 		return
+	# empty is a valid answer (silence), so no check on the value
 	var value = input_field.text.strip_edges()
-	if value == "":
-		return
 	locked = false
 	_clear_choices()
 	chosen.emit(value)

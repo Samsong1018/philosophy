@@ -6,10 +6,10 @@ Godot 4.7 visual novel. Script is in `Script.pdf`. This README only covers how t
 
 | Scene | File to make | Status |
 |---|---|---|
-| God (after bathroom) | `god_one.tscn` | empty placeholder, `scene_three.gd` already sends you here |
-| 4: Class (Ms. Alvarez) | `scene_four.tscn` + `scene_four.gd` | not started |
-| 5: Lunch (Kai) | `scene_five.tscn` + `scene_five.gd` | not started |
-| 6: Ending (columns, Rowan) | `scene_six.tscn` + `scene_six.gd` | not started |
+| God (after bathroom) | `god_one.tscn` | done |
+| 4: Class (Ms. Alvarez) | `scene_four.tscn` + `scene_four.gd` | done (no free-text field, no silence/ask-back yet) |
+| 5: Lunch (Kai) | `scene_five.tscn` + `scene_five.gd` | done (no silence option yet) |
+| 6: Ending (columns, Rowan) | `ending.tscn` + `ending.gd` | done |
 
 Art already exists for all of them in `Assets/` (see Assets below).
 
@@ -71,7 +71,7 @@ The script needs these and they don't exist, so you'll have to build them:
 
 - **Free-text input.** The god's "Who are you?", Alvarez's "Say it in your own words", Kai's "Not exactly...", Rowan, and the "rework" tag option all need a typed answer. Easiest route: add a `LineEdit` plus submit button to `text_box.tscn` and a `type_in(who, line) -> String` function next to `ask()`, following the same pattern (build UI, `locked = true`, `return await` a signal).
 - **Dimmed god screen.** Nothing for this exists. Simplest: a black `ColorRect` in `god_one.tscn` and call `say("", "...")` with the empty speaker.
-- **Tag panel, rewind button, record/retell, redacted lines.** None built.
+- **Tag panel, rewind button.** None built. (`player.retell(text)` and `player.first_clause(text)` in `you.gd` do the "Student claims ..." retelling; the ending uses them, and Kai uses `retell`.)
 
 ## Game state: `player.state`
 
@@ -89,6 +89,7 @@ player.state["reflex_state"]             # 0 or 1, rolled once at startup
 
 Keys the script uses that **aren't in `you.gd` yet**, so add them there before using them:
 
+- `"tag_sources"`: `{}`, tag word -> who gave it (`"boy": "Dev, hallway"`), shown in the ending. Set it whenever you append to `tags`.
 - `"record"`: `[]`, what NPCs repeat (Alvarez's notebook, Kai's retelling, detention slip)
 - `"unlocked"`: `false`, set to `true` in the god scene; gates the silence / ask back options in scenes 4, 5 and the single-stall door
 - `"silent"`: `false`, if you want Kai's "hard to read" line (stayed silent in scene 4 or 5)
@@ -164,5 +165,4 @@ Open the folder in Godot 4.7 and press F5 (starts at the main menu). To test a l
 ## Known TODOs in code
 
 - `scene_two.gd`: tag "Rework" and "Refuse" are placeholders (both halve the read). Script wants typed replacement word / hide tag and belong -1.
-- `god_one.tscn` is empty.
 - Script says Scene 2's phone choice has the player step over it silently; currently it's an explicit yes/no question.

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ckcrlxsy1p0ao" path="res://Scripts/scene_four.gd" id="1_7u0en"]
 [ext_resource type="PackedScene" path="res://Scenes/text_box.tscn" id="2_kalhj"]
 [ext_resource type="Texture2D" uid="uid://mmcqr1nrl2sj" path="res://Assets/char_player_base.svg" id="3_kalhj"]
-[ext_resource type="Texture2D" uid="uid://b1ddwjnu1a764" path="res://Assets/char_alvarez_blank.svg" id="5_scx37"]
+[ext_resource type="Texture2D" uid="uid://d4lkl564lft5i" path="res://Assets/char_alvarez.svg" id="5_scx37"]
 
 [node name="scene_four" type="Node2D" unique_id=1027449073]
 script = ExtResource("1_7u0en")

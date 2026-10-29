@@ -7,10 +7,12 @@ func _ready() -> void:
 	if pick == 0:
 		player.state["reads"]["gender"] += 1
 		player.state["clothes"] = 1
+		player.state["actions"].append("Chose the jeans.")
 		$Player/Clothes.texture = load("res://Assets/char_player_outfit_jeans_tshirt.svg")
 	else:
 		player.state["reads"]["gender"] -= 1
 		player.state["clothes"] = 0
+		player.state["actions"].append("Chose the skirt.")
 		$Player/Clothes.texture = load("res://Assets/char_player_outfit_skirt_tshirt.svg")
 
 	# reflex_state 1 = hand goes to the jeans first, 0 = the skirt

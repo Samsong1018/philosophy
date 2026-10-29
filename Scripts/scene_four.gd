@@ -8,30 +8,35 @@ func _ready() -> void:
 	
 	await $TextBox.say("Narrator", "You arrived at first period...")
 	await $TextBox.say("Ms. Alvarez", "A phone was taken in the hallway this morning. I'd like to settle this quietly")
-	var response = 0
-	if player.state["phone"] == true:
-		response = await $TextBox.ask("Ms. Alvarez", "(she looks at you) Was it you?", ["I picked it up to give it back.", "No.", "Why are you asking me?"])
-	elif player.state["phone"] == false and player.state["reads"]["conduct"] <= -1:
-		response = await $TextBox.ask("Ms. Alvarez", "(she looks at you) Was it you?", ["I picked it up to give it back.", "No.", "Why are you asking me?"])
-	else:
-		response = await $Textbox.ask("Ms. Alvarez", "Did anyone see anything?", ["I picked it up to give it back.", "No.", "Why are you asking me?"])
-	
-	if response == 0:
-		player.state["reads"]["conduct"] += 1
-		player.state["accounts"].append("Student admits to taking the phone")
-	elif response == 1 and player.state["phone"] == true:
-		await $TextBox.say("Narrator", "That is not the whole story, and you both know it")
-		player.state["reads"]["conduct"] -= 1
-		player.state["accounts"].append("Student denies involvement, Did not elaborate")
-	elif response == 1 and player.state["phone"] == false:
-		player.state["reads"]["conduct"] -= 1
-		await $TextBox.say("Ms. Alvarez", "We'll see")
-		player.state["accounts"].append("Student became defensive")
-	elif response == 2:
-		player.state["reads"]["conduct"] -= 1
-		player.state["reads"]["belong"] += 1
-		player.state["friction"] += 1
-	
+	# options are built conditionally, so match on the text, not the index
+	var options = ["No.", "Why are you asking me?"]
+	if player.state["phone"]:
+		options.insert(0, "I picked it up to give it back.")
+
+	var question = "(she looks at you) Was it you?"
+	if not player.state["phone"] and player.state["reads"]["conduct"] > -1:
+		# never created friction, so you're a witness, not a suspect
+		question = "Did anyone see anything?"
+
+	var pick = await $TextBox.ask("Ms. Alvarez", question, options)
+	match options[pick]:
+		"I picked it up to give it back.":
+			player.state["reads"]["conduct"] += 1
+			player.state["record"].append("Student admits to taking the phone.")
+			await $TextBox.say("Ms. Alvarez", "Then give it back.")
+		"No.":
+			player.state["record"].append("Student denies involvement. Did not elaborate.")
+			if player.state["phone"]:
+				player.state["reads"]["conduct"] -= 1
+				await $TextBox.say("Narrator", "That is not the whole story, and you both know it.")
+			else:
+				await $TextBox.say("Ms. Alvarez", "We'll see.")
+		"Why are you asking me?":
+			player.state["reads"]["conduct"] -= 1
+			player.state["reads"]["belong"] += 1
+			player.state["friction"] += 1
+			player.state["record"].append("Student became defensive.")
+
 	if player.state["reads"]["conduct"] <= -3:
 		player.state["record"].append("Detention Slip")
 	

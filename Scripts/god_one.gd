@@ -15,6 +15,6 @@ func _ready() -> void:
 		await $TextBox.say("??", "Those are the words you have. Who gave them to you?")
 		await $TextBox.say("??", "You will be asked again. Not by me.")
 	else:
-		await $TextBox.say("Silence is also an answer. I heart it.")
+		await $TextBox.say("??", "Silence is also an answer. I heard it.")
 		
 	scene_manager.change_scene("res://Scenes/scene_four.tscn")

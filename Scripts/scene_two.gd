@@ -18,6 +18,7 @@ func _ready() -> void:
 	var reply = await $TextBox.ask("Dev", question, ["> Yeah.", "> Why does it matter?", "> Depends who's asking."])
 	if reply == 0:
 		# confirm
+		player.state["reads"]["belong"] += 1
 		if player.state["reads"]["gender"] == 1:
 			player.state["reads"]["gender"] += 1
 		elif player.state["reads"]["gender"] == -1:
@@ -37,6 +38,7 @@ func _ready() -> void:
 	var pickup = await $TextBox.ask("You", "You notice a phone lying on the ground. Do you pick it up?", ["Yes", "No"])
 	if pickup == 0:
 		player.state["phone"] = true
+		player.state["actions"].append("Picked up a phone.")
 		$Phone.visible = false
 	else:
 		player.state["phone"] = false
@@ -49,6 +51,7 @@ func _ready() -> void:
 		var relation = await $TextBox.ask("???", "You just received a new tag: " + tag + ". Do you choose to accept?", ["Accept", "Rework", "Refuse"])
 		if relation == 0:
 			player.state["tags"].append(tag)
+			player.state["tag_sources"][tag] = "Dev, hallway"
 		else:
 			# TODO: rework should let the player type a replacement word (max 3 words),
 			# refuse should hide the tag and cost belong -1. Both just halve the read for now
