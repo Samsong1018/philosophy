@@ -26,6 +26,31 @@ var state = {
 
 const SAVE_PATH = "user://save.cfg"
 
+# new run: wipe the day, keep only what the first run unlocked
+func reset() -> void:
+	var unlocked = state["unlocked"]
+	state["name"] = ""
+	state["reads"] = {"gender": 0, "conduct": 0, "belong": 0}
+	state["phone"] = false
+	state["clothes"] = -1
+	state["friction"] = 0
+	state["tags"] = []
+	state["tag_sources"] = {}
+	state["tag_origins"] = {}
+	state["tag_relations"] = {}
+	state["unlocked"] = unlocked
+	state["silent"] = false
+	state["accounts"] = []
+	state["actions"] = []
+	state["record"] = []
+	state["reflex_state"] = randi_range(0, 1)
+	tags_changed.emit()
+
+# reads live in -10..10
+func clamp_reads() -> void:
+	for read in state["reads"]:
+		state["reads"][read] = clampi(state["reads"][read], -10, 10)
+
 func _ready() -> void:
 	state["reflex_state"] = randi_range(0, 1)
 	# a replay keeps what the first run unlocked

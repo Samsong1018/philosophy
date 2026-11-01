@@ -10,7 +10,12 @@ func _ready() -> void:
 	
 	var response = 0
 	var record = player.state["record"]
-	var heard = record[-1] if record.size() > 0 else "Student was in the hallway this morning."
+	# the detention slip is paperwork, not something Dev would repeat
+	var heard = "Student was in the hallway this morning."
+	for i in range(record.size() - 1, -1, -1):
+		if record[i] != "Detention Slip":
+			heard = record[i]
+			break
 	var question = "Dev told me something.\n\"" + heard + "\"\nI only know what I heard. Tell me the rest."
 	var options = ["Not exactly...", "Yeah.", "Ask Dev"]
 	if player.state["unlocked"]:
@@ -35,15 +40,15 @@ func _ready() -> void:
 	# Kai's word sticks as a tag, no accept/rework/refuse for this one
 	var word = "brave"
 	var line = "You seem braver than you look."
-	if player.state["silent"]:
-		word = "hard to read"
-		line = "You're hard to read. In a good way."
-	elif player.state["reads"]["conduct"] <= -2:
+	if player.state["reads"]["conduct"] <= -2:
 		word = "stubborn"
 		line = "You're stubborn. I mean it nicely."
 	elif player.state["reads"]["conduct"] >= 2:
 		word = "careful"
 		line = "You're careful. Like you check twice."
+	elif player.state["silent"]:
+		word = "hard to read"
+		line = "You're hard to read. In a good way."
 	# the tag lands on the silhouette as Kai says it
 	player.add_tag(word, "Kai, lunch")
 	await $TextBox.say("Kai", line)

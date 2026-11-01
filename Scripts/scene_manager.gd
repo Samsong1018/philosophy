@@ -20,6 +20,7 @@ func change_scene(path: String) -> void:
 	if busy:
 		return
 	busy = true
+	player.clamp_reads()
 	# block clicks while the screen is fading
 	fade.mouse_filter = Control.MOUSE_FILTER_STOP
 	var tween = create_tween()

@@ -59,4 +59,6 @@ func _ready() -> void:
 	$TextBox.visible = false
 	$Black/Final.text = "You will never finish giving an account of yourself. Someone is waiting to hear it anyway."
 	
+	# let the last line sit before the menu comes back
+	await get_tree().create_timer(7.0).timeout
 	scene_manager.change_scene("res://Scenes/main_screen.tscn")
